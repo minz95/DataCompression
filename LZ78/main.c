@@ -108,5 +108,5 @@ int main(int argc, char* argv[]) {
     /* Destroyes the wrapper instance */
     wrapper_destroy(w);
 
-    return ret;
+    return 0;
 }
