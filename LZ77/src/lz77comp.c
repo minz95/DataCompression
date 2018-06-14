@@ -77,13 +77,13 @@ int compress(char* in, char* out, int n, int l)
                 printf("Error counting the bits needed to the Lookahead Buffer parameter.\n");
                 return l_bits;
         }
-
+	/*
 	printf("%c[1m",27);
        	printf("Starting Compression...\n");
   	printf("%c[0m",27);
 	printf("Input File: %s\n", in);
 	printf("Output File: %s\n", out);
-
+	*/
 	/**** Load the data for the first time ****/	
 	byte_to_compress = fread(window, 1, (2*n) + l, f_in);
       	
@@ -221,10 +221,10 @@ int compress(char* in, char* out, int n, int l)
 	if(ret == -1) {
 		return ret;
 	}
-
+	/*
 	printf("%c[1m",27);
       	printf("........................................\n");
       	printf("%c[0m",27);
-
+	*/
 	return 0;
 }

@@ -67,21 +67,22 @@ int h_write(struct bitbuf* bfp, struct header* h)
 		errno = EINVAL; // Invalid Argument
 		return -1; 
 	}
-
+	/*	
 	printf("%c[1m",27);
 	printf("Writing the Header to the compressed file...\n");
 	printf("%c[0m",27);
-
+	*/
 	/* Write the header parameters */
 	ret = bitfile_write(bfp, (char*)(h->magic), 32, 0);
 	if(ret == -1) {
 		return -1;
 	}
-	else {
+	else {/*
 		printf("Magic Number: %d", (int)(h->magic[0]));
 		printf("%d", (int)(h->magic[1]));
 		printf("%d", (int)(h->magic[2]));
 		printf("%d\n", (int)(h->magic[3]));
+		*/
 		tot += ret;
 	}
 
@@ -90,7 +91,7 @@ int h_write(struct bitbuf* bfp, struct header* h)
                 return -1;
         }
         else {
-		printf("Header Length: %d\n", (int)(h->len));
+		//printf("Header Length: %d\n", (int)(h->len));
                 tot += ret;
         }
 
@@ -99,7 +100,7 @@ int h_write(struct bitbuf* bfp, struct header* h)
                 return -1;
         }
         else {
-		printf("Header Version: %d\n", (int)(h->ver));
+		//printf("Header Version: %d\n", (int)(h->ver));
                 tot += ret;
         }
 
@@ -108,7 +109,7 @@ int h_write(struct bitbuf* bfp, struct header* h)
                 return -1;
         }
         else {
-		printf("Lookahead Buffer Size: %d\n", (int)(h->l));
+		//printf("Lookahead Buffer Size: %d\n", (int)(h->l));
                 tot += ret;
         }
 
@@ -117,7 +118,7 @@ int h_write(struct bitbuf* bfp, struct header* h)
                 return -1;
         }
         else {
-		printf("Window Size: %d\n", (int)(h->n));
+		//printf("Window Size: %d\n", (int)(h->n));
                 tot += ret;
         }
 
@@ -127,18 +128,18 @@ int h_write(struct bitbuf* bfp, struct header* h)
 	}
 	else {
 		if(h->endian == 1) {
-			printf("Endian Type: LITTLE ENDIAN\n");
+			//printf("Endian Type: LITTLE ENDIAN\n");
 		}
 		else {
-			printf("Endian Type: BIG ENDIAN\n");
+			//printf("Endian Type: BIG ENDIAN\n");
 		}
 		tot += ret;
 	}
-
+	/*
 	printf("%c[1m",27);
       	printf("........................................\n");
       	printf("%c[0m",27);
-
+	*/
 	return tot;
 }
 

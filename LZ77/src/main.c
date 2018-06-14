@@ -18,6 +18,7 @@ struct myargs
 /* Print the compressor user guide */
 void print_man() 
 {
+	/*
 	printf("%c[1m",27);
 	printf("How to use lz77:\n");	
 	printf("%c[0m",27);
@@ -39,7 +40,7 @@ void print_man()
 	printf("%c[0m",27);
 	printf("./lz77 -c -i file.txt -o file.lz\n");
 	printf("./lz77 -c -i file.txt -o file.lz -w 1024 -l 64\n");
-	
+	*/
 	exit(0);
 }
 
@@ -79,8 +80,8 @@ int parse_options(struct myargs* ma, int argc, char* argv[])
 				print_man();		// help
 				break;
                         case '?':
-                                printf("Unknow Option.\n");
-				printf("Type ./lz77 -h to see the lz77 man.\n");
+                                //printf("Unknow Option.\n");
+				//printf("Type ./lz77 -h to see the lz77 man.\n");
                                 return -1;
                 } 
         } 
