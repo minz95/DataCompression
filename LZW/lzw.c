@@ -20,7 +20,7 @@ int main(int argc, char** argv) { // number of arguments, arguments array
     if (argc > 2) {
         if (strcmp(argv[1], "c") == 0) { // compression 
             inputFile = fopen(argv[2], "r"); // read from the input file (HTML)
-            outputFile = fopen(strcat(argv[2], ".lzw"), "w+b"); // binary write to output file 
+            outputFile = fopen(argv[3], "w+b"); // binary write to output file 
             
             if (outputFile == NULL || inputFile == NULL) {
                 printf("Can't open files\n'"); return 0;
@@ -46,7 +46,7 @@ int main(int argc, char** argv) { // number of arguments, arguments array
     } else {
         // usage
         printf("LZW 0.7   (c) 2009 Radek Stepan   03 Dec 2009\n\n");
-        printf("Usage:    lzw <command> <input file>\n\n");
+        printf("Usage:    lzw <command> <input file> <output file>\n\n");
         printf("<Commands>\n  c       Compress\n  d       Decompress\n");
     }
     

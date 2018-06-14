@@ -22,6 +22,8 @@
 #define SUCCESS 0
 #define FAILURE -1
 
+#include <stdio.h>
+
 extern FILE *in, *out;
 extern char *out_filename;
 
